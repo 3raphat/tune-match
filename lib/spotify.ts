@@ -43,8 +43,6 @@ export class Spotify {
 
     const data = (await response.json()) as SpotifySearchResponse
 
-    console.log(data.tracks.items)
-
     return data.tracks
   }
 
