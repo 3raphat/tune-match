@@ -84,6 +84,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
   providers: [
     Spotify({
+      clientId: process.env.NEXT_PUBLIC_AUTH_SPOTIFY_ID,
+      clientSecret: process.env.NEXT_PUBLIC_AUTH_SPOTIFY_SECRET,
       authorization:
         "https://accounts.spotify.com/authorize?scope=user-read-email,playlist-modify-public,playlist-modify-private",
     }),
