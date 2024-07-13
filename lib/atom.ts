@@ -14,3 +14,5 @@ export const previewTrackAtom = atomWithStorage<Track | null>(
   "previewTrack",
   null
 )
+
+export const volumeMuteAtom = atomWithStorage<boolean>("volumeMute", false)

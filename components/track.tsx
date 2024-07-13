@@ -4,7 +4,7 @@ import { useAtom } from "jotai"
 import { toast } from "sonner"
 import useSound from "use-sound"
 
-import { previewTrackAtom, selectedTrackAtom } from "@/lib/atom"
+import { previewTrackAtom, selectedTrackAtom, volumeMuteAtom } from "@/lib/atom"
 import { cn } from "@/lib/utils"
 
 export function Track({ track }: { track: Track }) {
@@ -24,6 +24,8 @@ export function Track({ track }: { track: Track }) {
     }
   }
 
+  const [volumeMute] = useAtom(volumeMuteAtom)
+
   const [_, setPreviewTrack] = useAtom(previewTrackAtom)
 
   const [play, { stop }] = useSound(
@@ -42,7 +44,9 @@ export function Track({ track }: { track: Track }) {
       onClick={handleClick}
       onMouseEnter={() => {
         setPreviewTrack(track)
-        play()
+        if (!volumeMute) {
+          play()
+        }
       }}
       onMouseLeave={() => {
         setPreviewTrack(null)
