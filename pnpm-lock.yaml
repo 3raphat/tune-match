@@ -14,9 +14,6 @@ importers:
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       jotai:
         specifier: ^2.9.0
         version: 2.9.0(@types/react@18.3.3)(react@18.3.1)
