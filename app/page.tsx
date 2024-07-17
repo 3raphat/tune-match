@@ -1,15 +1,14 @@
 import { auth } from "@/auth"
 
-import { RecommendationsList, SearchList } from "@/components/list"
-import { PreviewTrack } from "@/components/preview-track"
+import { DesktopLayout } from "@/components/layouts/desktop"
+import { MobileLayout } from "@/components/layouts/mobile"
 import { SearchTrack } from "@/components/search-track"
-import { SelectedTracks } from "@/components/selected-tracks"
 import { VolumeToggle } from "@/components/volume-toggle"
 
 export default async function Home() {
   const session = await auth()
   return (
-    <main className="flex flex-col items-center gap-6 py-12">
+    <main className="flex flex-col items-center gap-6 px-4 py-12">
       <div className="flex flex-col gap-2 text-center">
         <h1 className="text-3xl font-bold">Tune Match</h1>
         <p className="max-w-md text-balance text-center text-gray-500">
@@ -18,13 +17,11 @@ export default async function Home() {
         <VolumeToggle />
       </div>
       <SearchTrack />
-      <div className="grid w-full max-w-7xl grid-cols-3 gap-12">
-        <div>
-          <SelectedTracks />
-          <PreviewTrack />
-        </div>
-        <SearchList />
-        <RecommendationsList session={session!} />
+      <div className="block lg:hidden">
+        <MobileLayout session={session!} />
+      </div>
+      <div className="hidden lg:block">
+        <DesktopLayout session={session!} />
       </div>
     </main>
   )

@@ -4,6 +4,9 @@
     "plugin:tailwindcss/recommended",
     "plugin:prettier/recommended"
   ],
+  "rules": {
+    "tailwindcss/no-custom-classname": "off"
+  },
   "settings": {
     "tailwindcss": {
       "callees": ["cn"]
