@@ -6,9 +6,8 @@ import { useAtom } from "jotai"
 import { Session } from "next-auth"
 
 import { selectedTrackAtom } from "@/lib/atom"
-
-import { RecommendationsList, SearchList } from "../list"
-import { RecommendationsButton } from "../recommendations-button"
+import { RecommendationsList, SearchList } from "@/components/list"
+import { RecommendationsButton } from "@/components/recommendations-button"
 
 export function MobileLayout({ session }: { session: Session }) {
   const [isOpen, setIsOpen] = useState(false)

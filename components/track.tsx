@@ -1,4 +1,4 @@
-import { Fragment, MouseEventHandler } from "react"
+import { Fragment } from "react"
 import Image from "next/image"
 import { useAtom } from "jotai"
 import { toast } from "sonner"

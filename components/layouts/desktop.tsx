@@ -1,8 +1,8 @@
 import { Session } from "next-auth"
 
-import { RecommendationsList, SearchList } from "../list"
-import { PreviewTrack } from "../preview-track"
-import { SelectedTracks } from "../selected-tracks"
+import { RecommendationsList, SearchList } from "@/components/list"
+import { PreviewTrack } from "@/components/preview-track"
+import { SelectedTracks } from "@/components/selected-tracks"
 
 export function DesktopLayout({ session }: { session: Session }) {
   return (

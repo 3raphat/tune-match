@@ -4,8 +4,7 @@ import { Button } from "@headlessui/react"
 import { useAtom } from "jotai"
 
 import { selectedTrackAtom } from "@/lib/atom"
-
-import { RecommendationsButton } from "./recommendations-button"
+import { RecommendationsButton } from "@/components/recommendations-button"
 
 export function SelectedTracks() {
   const [selectedTracks, setSelectedTracks] = useAtom(selectedTrackAtom)

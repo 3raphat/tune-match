@@ -4,9 +4,8 @@ import { useAtom } from "jotai"
 import { Session } from "next-auth"
 
 import { recommendationsAtom, searchResultAtom } from "@/lib/atom"
-
-import { CreatePlaylistButton } from "./create-playlist-button"
-import { Track } from "./track"
+import { CreatePlaylistButton } from "@/components/create-playlist-button"
+import { Track } from "@/components/track"
 
 export function RecommendationsList({ session }: { session: Session }) {
   const [results] = useAtom(recommendationsAtom)
